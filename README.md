@@ -10,7 +10,7 @@ npm i
 * Go to http://www.console.developers.google.com, set up a new project and select that project<br>
 * Go to **Enable APIs and Services** and add the **Google Sheets API**<br>
 * On the **API Overview** page, click on **Create Credentials**<br>
-* Choose **Google Sheets API**, **Web Server as API** source and **Application Data**<br>
+* Choose **Google Sheets API**, **Web Server** as **API source** and **Application Data**<br>
 * Click on **'What Credentials Do I Need'**<br>
 * Give a name for the service account and email (this email will be required for accessing google sheets)<br>
 * For **Role**, choose **Project/Editor**(or Viewer)<br>
@@ -28,7 +28,7 @@ const client = new google.auth.JWT(
 );
 ```
 ### 3. Share Google Sheet with Service Mail
-* Go to the Google Sheet and share it with the email generated (**service_acc_name@app_name.iam.gserviceaccount.com**) in step 1 (saved as **client_email** in credentials json file)
+* Go to the Google Sheet and share it with the email generated (**service_acc_name@app_name.iam.gserviceaccount.com**) in step 2 (saved as **client_email** in credentials json file)
 
 ### 4 . Add Spreadsheet ID and Sheet Name to index.js
 * Copy the spreadsheet id(*docs.google.com/spreadsheets/d/**1kNKMVPlnVFX6ATDrJSeFLJqG8vJkz5tYH5MwWyVKwoc**/edit#gid=0*) and sheet name (**Sheet1, Sheet2, Mexico1**,etc)
