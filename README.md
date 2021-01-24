@@ -41,14 +41,24 @@ async function getRowDetails(cl, rowNo) {
         range: 'Sheet1'
     };
 ```
+### 5. Add Your Name and Country Name in index.js - for automating branch creation
+* Got to *index.js* and change th values at:
+*Note:This is to be generalized, maybe as cli arguments 
+```
+  //CREATING GIT BRANCH
+            let myname='deepto';
+            let country='south-korea';
+            run_git_command("git checkout master");
+            run_git_command(`git checkout -b ${myname}/${country}/${foldername}`);
 
-### 5. Add Your Email
+```
+### 6. Add Your Email
 * Got to *source_code_templates/datasource.js* and add your email at:
 ```
  mappedBy: '',
  
 ```
-### 6. Running the script
+### 7. Running the script
 * Go to the Google sheet, and choose the **row number** for which you want to create the mapping <br>
 You can specify the folder name as an argument, or leave it, whereby the **name** column from the Google Sheet will be used as the folder name<br>
 *Note: Try ro specify a folder name for sources which have many rows with identical names e.g Mexico)*
