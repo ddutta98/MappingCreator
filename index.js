@@ -7,6 +7,8 @@ const listing_test_code = require('./source_code_templates/listing-test');
 const detail_test_code = require('./source_code_templates/detail-test');
 const fs = require('fs');
 const request = require('request');
+const { exec } = require("child_process");
+
 
 //Command : node index.js sheetRowNo foldername //foldername is optional
 //By default, the name column is used for foldername, but if it is insufficient  folder name can be specified as cl arg
@@ -36,6 +38,12 @@ client.authorize(function (err) {
             if (!foldername)
                 foldername = getFolderName(result.name);
             variablename = getVariableName(result.name);
+
+            //CREATING GIT BRANCH
+            let myname='deepto';
+            let country='south-korea';
+            run_git_command("git checkout master");
+            run_git_command(`git checkout -b ${myname}/${country}/${foldername}`);
 
             //Getting the code as string for each file from template folder 
             //arg variablename is used to generate proper variable names accross files
@@ -166,4 +174,17 @@ function getHTML(url, path) {
         })
     });
 
+}
+function run_git_command(command){
+exec(command, (error, stdout, stderr) => {
+    // if (error) {
+    //     console.log(`error: ${error.message}`);
+    //     return;
+    // }
+    // if (stderr) {
+    //     console.log(`stderr: ${stderr}`);
+    //     return;
+    // }
+    // console.log(`stdout: ${stdout}`);
+});
 }
