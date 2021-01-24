@@ -49,8 +49,8 @@ async function getRowDetails(cl, rowNo) {
  
 ```
 ### 6. Running the script
-Go to the Google sheet, and choose the **row number** for which you want to create the mapping <br>
-You can specify the folder name as an argument, or leave it, whereby the **name** column from the Google Sheet will be used as the folder name
+*Go to the Google sheet, and choose the **row number** for which you want to create the mapping <br>
+You can specify the folder name as an argument, or leave it, whereby the **name** column from the Google Sheet will be used as the folder name<br>
 *Note: Try ro specify a folder name for sources which have many rows with identical names e.g Mexico)*
 Run the script
 ```
